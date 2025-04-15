@@ -7,7 +7,6 @@
 - **Flood Detection**: Sentinel-1 SAR data is used to calculate flood extent by analyzing pre- and post-event backscatter differences.
 
 - **Post-Processing Steps**: This version of the code provides an initial estimation of flood detection but requires further post-processing steps to enhance accuracy. These include refining the thresholds, integrating auxiliary datasets, and improving water body masking, which are currently underway.
-- For water bodies masking out, [Permanent_waterbodies_dataset](https://siat.provincia.tn.it/geonetwork/srv/ita/catalog.search#/metadata/p_TN:0f1fdc33-5c71-4c6d-81e7-25eb2ab0e599) — downloaded from [webgis.provincia.tn.it](https://webgis.provincia.tn.it)
 
 - **Outputs**:
   - Pre-flood, post-flood, and flood-extent layers.
