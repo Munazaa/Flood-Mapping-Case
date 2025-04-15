@@ -1,5 +1,10 @@
-earthengine-api
-geemap
 matplotlib
 numpy
 ipyleaflet
+rasterio
+numpy
+geopandas
+matplotlib
+shapely
+pillow
+contextily
