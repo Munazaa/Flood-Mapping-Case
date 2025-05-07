@@ -4,13 +4,13 @@
 
 - **NDWI Calculation**: The code calculates the Normalized Difference Water Index (NDWI) using Sentinel-2 imagery to detect water bodies before and after a flood event.
 
-- **SAR-Data Processing**: Sentinel-1 SAR data is used to calculate flood extent by analyzing pre- and post-event backscatter differences.
+- **SAR-Data Processing**: Sentinel-1 SAR data is processd in SNAP using snappy API.
 
 - **Post-Processing Steps**: This version of the code provides an initial estimation of flood detection but requires further post-processing steps to enhance accuracy. These include refining the thresholds, integrating auxiliary datasets, and improving water body masking, which are currently underway.
 
 - **Outputs**:
-  - Pre-flood, post-flood, and flood-extent layers.
-- **Vector (shapefile) output is saved to the specified path for further visualization and analysis in geospatial tools such as ArcGIS or QGIS.**
+  - Flood-extent layers.
+- **Vector (shapefile) and raster (.tif) outputs are saved to the specified path for further visualization and analysis in geospatial tools such as ArcGIS or QGIS.**
 
 ## Requirements
 To install the required libraries, run the following command:
