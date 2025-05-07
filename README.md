@@ -31,11 +31,10 @@ after_event_end = YYYY-MM-DD          # End date of the "after event" period
 
 [INPUT]
 aoi = coordinates of the rectangle of the area or /path/to/aoi_shapefile.shp   # Path to Area of Interest (AOI) shapefile
-s1_collection = COPERNICUS/S1_GRD       # Sentinel-1 ImageCollection ID or directly from GEE
-s2_collection = COPERNICUS/S2_SR        # Sentinel-2 ImageCollection ID or directly from GEE
+s1_collection = COPERNICUS/S1_GRD       # Sentinel-1 ImageCollection
+s2_collection = COPERNICUS/S2_SR        # Sentinel-2 ImageCollection
 swater_dataset = JRC/GSW1_0/GlobalSurfaceWater  # Permanent water dataset or water data from other sources
-chirps_start_date =  YYYY-MM-DD         #start month for rainfall analysis 
-chirps_end_date =  YYYY-MM-DD          #end month for rainfall analysis 
+
 
 [OUTPUT]
 output_directory = /path/to/output        # Directory to save vector output
