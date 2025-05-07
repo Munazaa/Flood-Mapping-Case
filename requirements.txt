@@ -1,13 +1,20 @@
-matplotlib
-numpy
-ipyleaflet
-rasterio
-numpy
-geopandas
-matplotlib
-shapely
-pillow
-contextily
-folium
-tqdm
+# Core Scientific Libraries
+numpy==1.24.4
+matplotlib==3.7.1
 
+# Raster and Vector Geospatial Processing
+rasterio==1.3.8
+geopandas==0.13.2
+shapely==2.0.1
+Pillow==9.5.0
+contextily==1.3.0
+folium==0.14.0
+ipyleaflet==0.17.3
+tqdm==4.65.0
+pygeoif==0.7
+
+# SNAP / snappy dependencies (used with ESA SNAP toolbox)
+# Note: snappy is bundled with SNAP and not pip-installable, but ensure jpy is installed jpy==0.10.0
+
+#shapefile reading
+pyshp==2.3.1  # (for `import shapefile`)
