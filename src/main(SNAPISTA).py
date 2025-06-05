@@ -228,8 +228,8 @@ def detect_change(pre_path, post_path, output_path):
 
         # Change detection using log-ratio
         log_ratio = 10 * np.log10(post_band / pre_band)
-        flood_mask = (log_ratio < -4.5)
-        flood_mask = remove_small_objects(flood_mask, min_size=100)
+        flood_mask = (log_ratio < -5)
+        flood_mask = remove_small_objects(flood_mask, min_size=200)
        
 
         flood_mask = flood_mask.astype(np.uint8)
@@ -500,12 +500,6 @@ def run_pipeline():
     write_metadata()
     print("Pipeline complete.")
     
-
-def reproject_geometry(geom, src_crs, dst_crs):
-    if src_crs != dst_crs:
-        project = pyproj.Transformer.from_crs(src_crs, dst_crs, always_xy=True).transform
-        return transform(project, geom)
-    return geom
 
 ## python main.py "{'s1PreFlood':'sentinel1_GRD_preflood','s1PostFlood':'sentinel1_GRD_postflood','s2PreFlood':'sentinel2_pre_flood','s2PostFlood':'sentinel2_post_flood','geomWKT':'POLYGON ((10.644988646837982 45.85539621678084, 10.644988646837982 46.06780100571985, 10.991744628283294 46.06780100571985, 10.991744628283294 45.85539621678084, 10.644988646837982 45.85539621678084))','slopeArtifact':'Slopes_TN','slopeFileName':'slope_map25832.tif','lakeShapeArtifactName':'Lakes_TN','lakeShapeFileName':'idrspacq.shp','riverShapeArtifactName':'Rivers_TN','riverShapeFileName':'cif_pta2022_v.shp','output':'test_nk','eventDate':'2020-10-02','targetCRS':'EPSG:25832','polarization':'VH','dem_threshold':700,'slope_threshold':7,'noise_min_pixels':15,'river_buffer_meters':2}"
 
