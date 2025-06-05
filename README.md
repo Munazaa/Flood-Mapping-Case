@@ -4,7 +4,7 @@
 
 - **NDWI Calculation**: The code calculates the Normalized Difference Water Index (NDWI) using Sentinel-2 imagery to detect water bodies before and after a flood event.
 
-- **SAR-Data Processing**: Sentinel-1 SAR data is processd in SNAP using snappy API.
+- **SAR-Data Processing**: Sentinel-1 SAR data is processd in SNAP using SNAPISTA.
 
 - **Post-Processing Steps**: This version of the code provides an initial estimation of flood detection but requires further post-processing steps to enhance accuracy. These include refining the thresholds, integrating auxiliary datasets, and improving water body masking, which are currently underway.
 
@@ -30,10 +30,12 @@ after_event_end = YYYY-MM-DD          # End date of the "after event" period
 
 
 [INPUT]
-aoi = coordinates of the rectangle of the area or /path/to/aoi_shapefile.shp   # Path to Area of Interest (AOI) shapefile
+aoi_geomtry = coordinates of the rectangle of the area / or user defiend wkt   
 s1_collection = COPERNICUS/S1_GRD       # Sentinel-1 ImageCollection
 s2_collection = COPERNICUS/S2_SR        # Sentinel-2 ImageCollection
-swater_dataset = JRC/GSW1_0/GlobalSurfaceWater  # Permanent water dataset or water data from other sources
+slop_path = slop.tiff        # Slope map
+lakes_dataset = lakes.shp  # Lakes data
+rivers_dataset = rivers.shp  # Lakes data
 
 
 [OUTPUT]
