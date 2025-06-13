@@ -31,18 +31,16 @@ Pillow==11.2.1
 # Geometry and WKT Handling
 # -------------------------------------------
 pygeoif==0.7
-shapely==2.0.7  # Already listed above
 
 # -------------------------------------------
 # Skimage & Scikit tools
 # -------------------------------------------
-scikit-image  # Required for skimage.morphology
-scikit-learn  # Optional but often useful
+scikit-image == 0.24.0 # Required for skimage.morphology
 
 # -------------------------------------------
 # Others (used or imported)
 # -------------------------------------------
-python-dateutil==2.9.0.post0
+python==3.9.22
 requests==2.32.3
 tqdm==4.65.0
 pathos==0.3.4
