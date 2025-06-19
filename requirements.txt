@@ -4,7 +4,7 @@
 numpy==1.26.4
 scipy==1.13.1
 pandas==2.2.3
-GDAL == 3.11.0
+GDAL==3.11.0
 
 # -------------------------------------------
 # Raster and Vector Geospatial Processing
@@ -35,12 +35,12 @@ pygeoif==0.7
 # -------------------------------------------
 # Skimage & Scikit tools
 # -------------------------------------------
-scikit-image == 0.24.0 # Required for skimage.morphology
+scikit-image==0.24.0 # Required for skimage.morphology
 
 # -------------------------------------------
 # Others (used or imported)
 # -------------------------------------------
-python==3.9.22
+#python==3.9.22
 requests==2.32.3
 tqdm==4.65.0
 pathos==0.3.4
