@@ -17,21 +17,42 @@ Install the required Python libraries using the following command:
 ```sh
 pip install -r requirements.txt
 ```
-### Step 2: Configure the Project
-Edit the config.ini file located in the repository to set the analysis parameters:
-- Dates for "before" and "after" events to download satellite data.
-- Paths to the input datasets in Datalake (e.g., Artifacts, AOI shapefile, DEM, Rivers and lakes shapeffiles).
-- Output directory for saving results.
+<h2>Step 2: Configure the Project</h2>
+<p>Edit the <code>config.ini</code> file and provide:</p>
+<ul>
+  <li><code>flood_date</code>: date of the flood event</li>
+  <li><code>aoi_wkt</code>: AOI polygon in WKT format (rectangle preferred)</li>
+  <li>Paths to input datasets (slope map, lakes, rivers)</li>
+  <li>Output directory path</li>
+  <li>Optional: DEM/slope thresholds, polarization type, etc.</li>
+</ul>
 
- ### Step 3: Run the Jupyter Notebook
-Open the notebook located in the [`src`](src/) folder. Click the link to view and download the notebook.
-```sh
-jupyter notebook src/flood_detection_notebook.ipynb
-```
-- Run the notebook cells sequentially.
-- Visulize the pre and post water detection layers for each satellite data.
-- Analyze Sentinel-1 and Sentinel-2 data for flood detection.
- ### Step 4: Access the Results
+<h2>Step 3: Run the Script</h2>
+<p>Run the pipeline using:</p>
+<pre><code class="language-bash">python main.py</code></pre>
 
-- Exported Files: The results (shapefile) will be saved in the directory specified in the config.ini file.
-- Use geospatial tools such as QGIS or ArcGIS for further visualization and analysis of the outputs.
+<p>This script will:</p>
+<ul>
+  <li>Download Sentinel-1 and Sentinel-2 imagery</li>
+  <li>Detect floods using NDWI (S2) and backscatter change (S1)</li>
+  <li>Apply slope, elevation, and river/lake masking</li>
+  <li>Save cleaned outputs as raster and shapefiles</li>
+</ul>
+
+<h2>Step 4: Access the Results</h2>
+<ul>
+  <li>
+    Results are saved to the <code>output_directory</code> specified in <code>config.ini</code>
+  </li>
+  <li>
+    Outputs include:
+    <ul>
+      <li>Flood masks (<code>.tif</code>)</li>
+      <li>Vector shapefiles (<code>.shp</code>) of flooded areas</li>
+    </ul>
+  </li>
+  <li>
+    You can open them in <strong>QGIS</strong>, <strong>ArcGIS</strong>, or <strong>Google Earth Engine</strong> for further analysis
+  </li>
+</ul>
+
