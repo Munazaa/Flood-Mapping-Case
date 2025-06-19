@@ -2,7 +2,7 @@
 # aipc.yaml: AI Product Configuration
 project:
   name: Flood detection
-  version: 1.0.0
+  version: 1.2.0
   description: >
     This project focuses on flood detection and analysis using satellite imagery 
     (Sentinel-1 and Sentinel-2). It calculates NDWI and visualizes flood-prone areas, 
@@ -32,13 +32,13 @@ workflow:
   - Step 2: Preprocess data (cloud masking, smoothing, slope filtering)
   - Step 3: Process Sentinel-1 data to compute backscatter for water detection
   - Step 4: Compute NDWI from Sentinel-2
-  - Step 5: Visualize individual pre- and post-flood water detection layers for each satellite in Jupyter Notebook
-  - Step 6: Plot histograms for pre- and post-flood water statistical analysis
-  - Step 7: Calculate flood extent layer
-  - Step 8: Export results (e.g., as shapefiles)
+  - Step 7: Calculate flood extent layer by fusing all flood layers
+  - Step 8: Export results (e.g., as shapefiles and rastor)
 
 outputs:
-  vector: Google Drive (Shapefiles for flood-affected areas)
+  vector: path\to\outputfolder (Shapefiles for flood-affected areas)
+  raster: path\to\outputfolder (.tif file for flood-affected areas)
+  metadata: .json file for meta data
 
 notes:
   - Post-processing is ongoing to improve flood detection accuracy.
